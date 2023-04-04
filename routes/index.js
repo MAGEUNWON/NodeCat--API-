@@ -2,7 +2,7 @@ const express = require('express');
 const axios = require('axios');
 
 const router = express.Router();
-const URL = 'http://localhost:8002/v1';
+const URL = 'http://localhost:8002/v2'; // 버전 바뀌면 v숫자 버전에 맞게 바꿔주면 됨. 
 axios.defaults.headers.origin = 'http://localhost:4000'; // origin 헤더 추가. 요청의 헤더 origin 값을 localhost:4000으로 설정. 어디서 요청을 보내는지 파악하기 위해 사용. 나중에 주소가 바뀌면 이 값도 따라서 바꾸면 됨. 
 
 const request = async (req, api) => {

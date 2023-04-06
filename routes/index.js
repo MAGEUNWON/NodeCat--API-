@@ -1,5 +1,6 @@
 const express = require('express');
 const axios = require('axios');
+const res = require('express/lib/response');
 
 const router = express.Router();
 const URL = 'http://localhost:8002/v2'; // 버전 바뀌면 v숫자 버전에 맞게 바꿔주면 됨. 
@@ -51,6 +52,10 @@ router.get('/search/:hashtag', async(req, res, next) => {
   }
 });
 // GET /search/:hashtag 라우터는 API를 사용해 해시태그를 검색하는 라우터임
+
+router.get('/', (req, res) => {
+  res.render('main', {key: process.env.CLIENT_SECRET});
+});
 
 
 // router.get('/test', async(req, res, next)=>{
